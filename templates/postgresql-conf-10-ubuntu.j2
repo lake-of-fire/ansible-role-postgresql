@@ -668,6 +668,6 @@ include_dir = 'conf.d'			# include files ending in '.conf' from
 
 listen_addresses = {{ postgresql_server_listen }}
 
-{% for option in (postgresql_server_conf | sort(attribute='values')) %}
+{% for option in (postgresql_server_conf) %}
 {{ option }} = {{ postgresql_server_conf[option] }}
 {% endfor %}
